@@ -17,11 +17,11 @@ import getpass
 GITHUB_USER = 'sonofeft'
 
 here = os.path.abspath(os.path.dirname(__file__))
-print( '='*55 )
+print(( '='*55 ))
 print( '     Building HISTORY.rst file' )
-print( '     at: ' + here )
-print( '     Need GitHub user password for ' + GITHUB_USER)
-print( '='*55 )
+print(( '     at: ' + here ))
+print(( '     Need GitHub user password for ' + GITHUB_USER))
+print(( '='*55 ))
 PASSWORD = getpass.getpass(prompt='Enter Password: ')
 
 github_url = "https://api.github.com/repos/sonofeft/PyHatch/commits"
@@ -41,7 +41,7 @@ GitHub Log
 """)
 
 
-print( 'len(t.json()) =' + '%s'%len(t.json()) )
+print(( 'len(t.json()) =' + '%s'%len(t.json()) ))
 last_date_str = ''
 last_author_str = ''
 for D in t.json():
@@ -65,7 +65,7 @@ for D in t.json():
 
 
 
-    print( D['commit']['author']['date'][:10] + ' ' + D['commit']['message'] )
+    print(( D['commit']['author']['date'][:10] + ' ' + D['commit']['message'] ))
 
     last_date_str = date_str
     last_author_str = author_str

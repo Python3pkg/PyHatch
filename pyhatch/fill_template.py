@@ -11,8 +11,8 @@ For Example:
 
    render(s, D) will return:   'How now brown cow.'
 """
-from __future__ import absolute_import
-from __future__ import print_function
+
+
 
 import os
 # pylint: disable=C0326, C0103, W0702

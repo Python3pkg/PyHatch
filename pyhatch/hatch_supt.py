@@ -79,8 +79,8 @@ Notice that a config file (PyHatch.cfg) is created in the users home directory
 
 # pylint: disable=R0902, R0913, R0914, R0912, W0122
 
-from __future__ import absolute_import
-from __future__ import print_function
+
+
 
 import os
 here = os.path.abspath(os.path.dirname(__file__))
@@ -101,7 +101,7 @@ import sys
 if sys.version_info < (3,):
     from future import standard_library
     standard_library.install_aliases()
-    text = unicode
+    text = str
 else:
     from builtins import str as text  # for python 2/3 unicode issues
 
@@ -254,7 +254,7 @@ class Hatch(object):
         if self.proj_license not in CLASSIFIER_D:
             print('='*20,' ERROR in Hatch Object ', '='*20)
             print('    proj_license = "%s" which is NOT in supported list.'%self.proj_license)
-            print('    Accepted list =',CLASSIFIER_D.keys())
+            print('    Accepted list =',list(CLASSIFIER_D.keys()))
             print("    (if your's is not listed, pick one from above and correct it by hand later.)")
             print('='*55)
 

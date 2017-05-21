@@ -19,16 +19,16 @@ hatch_supt and to then create a skeleton python project.
 
 # tk_happy generated code. DO NOT EDIT THE FOLLOWING. section "imports"
 #from Tkinter import *
-from Tkinter import Frame, LabelFrame, Button, Entry, StringVar, Label,\
+from tkinter import Frame, LabelFrame, Button, Entry, StringVar, Label,\
                     Radiobutton, W, Scrollbar, VERTICAL, Text, RIGHT, Y,\
                     LEFT, BOTH, DISABLED, END, NORMAL, Tk, OptionMenu
 # >>>>>>insert any user code below this comment for section "imports"
 # Place any user import statements here
-import tkFileDialog
-import tkMessageBox
-import tkFont
+import tkinter.filedialog
+import tkinter.messagebox
+import tkinter.font
 import os
-from hatch_supt import Hatch, DEV_STATUS_OPTIONS
+from .hatch_supt import Hatch, DEV_STATUS_OPTIONS
 
 
 # Man this is ugly... It's only used during development (prior to running
@@ -36,21 +36,21 @@ from hatch_supt import Hatch, DEV_STATUS_OPTIONS
 try:
     from pyhatch.license_templates import CLASSIFIER_D
 except:
-    from license_templates import CLASSIFIER_D
+    from .license_templates import CLASSIFIER_D
 
 
 # standard message dialogs... showinfo, showwarning, showerror
 def ShowInfo(title='Title', message='your message here.'):
     """Simply wraps the tkinter function of the "same" name."""
-    tkMessageBox.showinfo( title, message )
+    tkinter.messagebox.showinfo( title, message )
     return
 def ShowWarning(title='Title', message='your message here.'):
     """Simply wraps the tkinter function of the "same" name."""
-    tkMessageBox.showwarning( title, message )
+    tkinter.messagebox.showwarning( title, message )
     return
 def ShowError(title='Title', message='your message here.'):
     """Simply wraps the tkinter function of the "same" name."""
-    tkMessageBox.showerror( title, message )
+    tkinter.messagebox.showerror( title, message )
     return
 
 
@@ -58,18 +58,18 @@ def ShowError(title='Title', message='your message here.'):
 # return True for OK, Yes, Retry, False for Cancel or No
 def AskYesNo(title='Title', message='your question here.'):
     """Simply wraps the tkinter function of the "same" name."""
-    return tkMessageBox.askyesno( title, message )
+    return tkinter.messagebox.askyesno( title, message )
 def AskOK_Cancel(title='Title', message='your question here.'):
     """Simply wraps the tkinter function of the "same" name."""
-    return tkMessageBox.askokcancel( title, message )
+    return tkinter.messagebox.askokcancel( title, message )
 def AskRetryCancel(title='Title', message='your question here.'):
     """Simply wraps the tkinter function of the "same" name."""
-    return tkMessageBox.askretrycancel( title, message )
+    return tkinter.messagebox.askretrycancel( title, message )
 
 # return "yes" for Yes, "no" for No
 def AskQuestion(title='Title', message='your question here.'):
     """Simply wraps the tkinter function of the "same" name."""
-    return tkMessageBox.askquestion( title, message )
+    return tkinter.messagebox.askquestion( title, message )
 # END of standard message dialogs
 
 
@@ -98,7 +98,7 @@ class _Hatch_GUI(object):
                                                height="90", width="718")
         self.Shortdesc_Labelframe.place(x=60, y=127)
 
-        helv20 = tkFont.Font(family='Helvetica', size=20, weight='bold')
+        helv20 = tkinter.font.Font(family='Helvetica', size=20, weight='bold')
 
         self.Buildproject_Button = Button(dialogframe,text="Build Project",
                                           width="15", font=helv20)
@@ -344,7 +344,7 @@ class _Hatch_GUI(object):
     # return a string containing directory name
     def AskDirectory(self, title='Choose Directory', initialdir="."):
         """Simply wraps the tkinter function of the "same" name."""
-        dirname = tkFileDialog.askdirectory(parent=self.master,initialdir=initialdir,title=title)
+        dirname = tkinter.filedialog.askdirectory(parent=self.master,initialdir=initialdir,title=title)
         return dirname # <-- string
 
 
@@ -411,7 +411,7 @@ class _Hatch_GUI(object):
 
 
         if self.w!=w or self.h!=h:
-            print "Master reconfigured... make resize adjustments"
+            print("Master reconfigured... make resize adjustments")
             self.w=w
             self.h=h
 # tk_happy generated code. DO NOT EDIT THE FOLLOWING. section "end"
